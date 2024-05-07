@@ -15,7 +15,7 @@ def input_error(strerror: str = "Invalid input."):
                 return func(*args, **kwargs)
             except(ValueError, IndexError, ContactError, PhoneFormatError) as e:
                 if hasattr(e, "message"):
-                    return f"{strerror}\Error: {e.message}"
+                    return f"{strerror}\nError: {e.message}"
                 return strerror
         return wrapper
     return decorator
